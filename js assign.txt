@@ -1,0 +1,221 @@
+// Variables Declarations
+
+const firstName = "Prem";  // Changed from var to const
+let lastName = "Namala";
+let age = 20;  // Changed from const to let
+console.log(firstName, lastName, age);
+// Output: Prem Namala 20
+
+
+// Variable Scope
+
+let Y = 10;  // Changed from var to let
+var X = 20;  // Changed from let to var
+const Z = 30;
+
+function scope() {
+    const y = 40;  // Changed from var to const
+    var x = 30;    // Changed from let to var
+    let z = 20;    // Changed from const to let
+    console.log(Y);  // Output: 10
+    console.log(X);  // Output: 20
+    console.log(Z);  // Output: 30
+    console.log(x);  // Output: 30
+    console.log(y);  // Output: 40
+    console.log(z);  // Output: 20
+}
+scope();
+console.log(X);  // Output: 20
+console.log(Y);  // Output: 10
+console.log(Z);  // Output: 30
+
+
+// Arithmetic Operators
+
+const a = 30;  // Changed from let to const
+var b = 10;    // Changed from let to var
+let result1 = a * b - a + b % a / b;
+let result = ((a * b) - (a + b)) % (a / b); // 300 - 40 => 260 % 3 => 2
+console.log(result1);  // Output: 271
+console.log(result);   // Output: 2
+
+
+// Comparison Operators
+
+let aComp = 40;  // Renamed to avoid conflict
+let bComp = 20;  // Renamed to avoid conflict
+console.log(aComp == bComp, aComp != bComp, aComp === bComp, aComp !== bComp, aComp < bComp, aComp > bComp, aComp <= bComp, aComp >= bComp);
+// Output: false true false true false true false true
+
+
+// Logical Operators
+
+let aLog = 20;  // Renamed to avoid conflict
+let bLog = 30;  // Renamed to avoid conflict
+console.log(aLog < bLog && aLog != bLog, aLog < bLog || aLog == bLog, !(aLog < bLog && aLog > bLog));
+// Output: true true true
+
+
+// Primitive Data Types
+
+let variable = 40;
+console.log(typeof variable);  // Output: number
+variable = "Hello";
+console.log(typeof variable);  // Output: string
+variable = true;
+console.log(typeof variable);  // Output: boolean
+console.log(typeof null);  // Output: object
+let x;  // Undefined
+console.log(typeof x);  // Output: undefined
+
+
+// Object Data Type
+
+let xObj = {firstName: "Prem", lastName: "Namala", age: 20, display: function() { return "Hello I'm " + this.firstName + " " + this.lastName; }};
+console.log(xObj.firstName, xObj.lastName, xObj.age, xObj.display());  // Output: Prem Namala 20 Hello I'm Prem Namala
+xObj.age = 21;
+console.log(xObj.age);  // Output: 21
+
+
+// Explicit Type Conversion
+
+let aConv = 20;  // Renamed to avoid conflict
+let bConv = "30";  // Renamed to avoid conflict
+let cConv = aConv > bConv;
+console.log(Number(bConv));  // Output: 30
+console.log(String(20));  // Output: "20"
+console.log(Boolean(cConv));  // Output: false
+console.log(Number(true + 20));  // Output: 21
+console.log(String(1.0));  // Output: "1"
+console.log(String(5 > 6));  // Output: "false"
+
+
+// Implicit Type Coercion
+
+console.log("5" + 5);  // Output: "55"
+console.log("5" * 5);  // Output: 25
+console.log(null - 5);  // Output: -5
+console.log(undefined + 5);  // Output: NaN
+console.log(7 + true);  // Output: 8
+
+
+// String Manipulation
+
+let str = "Hello";
+console.log(str + ", Prem!");  // Output: Hello, Prem!
+console.log(str.charAt(4));  // Output: o
+console.log(str.length);  // Output: 5
+str = "Hello Prem";
+console.log(str.substring(6, 13));  // Output: Prem
+
+
+// Template Literals
+
+let ageLit = 18;  // Renamed to avoid conflict
+console.log(`Age: ${ageLit + 2}`);  // Output: Age: 20
+console.log(`It is a multiline string
+first line
+second line 
+age = ${ageLit}`);
+// Output:
+// It is a multiline string
+// first line
+// second line
+// age = 18
+
+
+// If-Else Statements
+
+let number = -2;
+if (number > 0) console.log("Positive");
+else if (number == 0) console.log("Zero");
+else console.log("Negative");
+// Output: Negative
+
+
+// Switch Statements
+
+let aSwitch = 5;  // Renamed to avoid conflict
+let bSwitch = 6;  // Renamed to avoid conflict
+let opr = "*";
+switch (opr) {
+    case "+":
+        console.log(aSwitch + bSwitch);
+        break;
+    case "-":
+        console.log(aSwitch - bSwitch);
+        break;
+    case "*":
+        console.log(aSwitch * bSwitch);
+        break;
+    case "/":
+        console.log(aSwitch / bSwitch);
+        break;
+    case "%":
+        console.log(aSwitch % bSwitch);
+        break;
+}
+// Output: 30
+
+
+// Strict Mode
+
+"use strict";
+// x = 10;  // ReferenceError: x is not defined
+let xStrict = 10;  // Corrected to avoid error
+console.log(xStrict);  // Output: 10
+
+
+// Function Declaration
+
+function sum(a, b) {
+    console.log(a + b);
+}
+sum(5, 6);
+// Output: 11
+
+
+// Function Expression
+
+function sumExp(a, b) {
+    return a + b;
+}
+let xExp = sumExp(5, 6);  // Renamed variable to avoid conflict
+console.log(xExp);  // Output: 11
+
+
+// Passing Arguments
+
+function sumArg(a, b) {
+    console.log(a + b);
+}
+sumArg("5", 6);  // Output: 56 (due to string concatenation)
+
+
+// Default Parameters
+
+function greetings(name = "sir") {
+    console.log("Hello " + name);
+}
+greetings();  // Output: Hello sir
+greetings("Prem");  // Output: Hello Prem
+
+
+// Return Statement
+
+function div(a, b) {
+    return a / b;
+}
+let resultDiv = div(5, 2);  // Renamed to avoid conflict
+console.log(resultDiv);  // Output: 2.5
+
+
+// Chaining Function Calls
+
+function sumChain(a, b) {
+    return a + b;
+}
+function mulChain(a, b) {
+    console.log(a * b);
+}
+mulChain(sumChain(5, 6), 7);  // Output: 77
